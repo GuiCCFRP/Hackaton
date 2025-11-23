@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='settings.css') }}">
+</head>
+<body>
+
+    <div class="settings-container">
+
+        <h1>Account Settings</h1>
+
+        
+        <section class="settings-section">
+            <h2>Update Profile</h2>
+
+            <form method="POST" action="{{ url_for('auth.update_profile') }}">
+                <label>Email:</label>
+                <input type="email" name="email"
+                       value="{{ current_user.email }}" required>
+
+                <label>Username:</label>
+                <input type="text" name="username"
+                       value="{{ current_user.username }}" required>
+
+                <button type="submit" class="btn primary">Save Changes</button>
+            </form>
+        </section>
+
+        
+        <section class="settings-section">
+            <h2>Change Password</h2>
+
+            <form method="POST" action="{{ url_for('auth.change_password') }}">
+                <label>Current Password:</label>
+                <input type="password" name="current_password" required>
+
+                <label>New Password:</label>
+                <input type="password" name="new_password" required>
+
+                <label>Confirm Password:</label>
+                <input type="password" name="confirm_password" required>
+
+                <button type="submit" class="btn primary">Update Password</button>
+            </form>
+        </section>
+
+        
+        <section class="settings-section danger-zone">
+            <h2>Delete Account</h2>
+            <p>This action cannot be undone.</p>
+
+            <form method="POST" action="{{ url_for('auth.delete_account') }}">
+                <button type="submit" class="btn danger">Delete Account</button>
+            </form>
+        </section>
+
+        
+        <div class="actions">
+            <a href="{{ url_for('index') }}" class="link">⬅ Back to Home</a>
+            <a href="{{ url_for('auth.logout') }}" class="link logout">Logout</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

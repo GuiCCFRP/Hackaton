@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>CAS Reflection Helper</title>
+</head>
+<body>
+    <h1>CAS Reflection Helper</h1>
+
+    
+    <form method="POST" action="{{ url_for('main.generate_reflection') }}">
+
+        <h2 id="section">Basic Info</h2>
+        <div id="cas">
+            <button type="button" id="btn1">Creativity</button>
+            <button type="button" id="btn2">Activity</button>
+            <button type="button" id="btn3">Service</button>                            
+        </div>
+
+        <h2>Experience Title</h2>
+        <input name="q1" id="q1" type="text" placeholder="Enter the title of your experience here">
+
+        <h2>Brief Overview</h2>
+        <textarea name="q2" id="q2" rows="4" cols="50" placeholder="What did you do in a nutshell?"></textarea>
+
+        <h2>What was your main goal?</h2>
+        <textarea name="q3" id="q3" rows="4" cols="50" placeholder="Through this experience I wanted to"></textarea>
+
+        <h2>How did you track your progress?</h2>
+        <textarea name="q4" id="q4" rows="4" cols="50" placeholder="I measured success by"></textarea>
+
+        <h2>When did this experience take place?</h2>
+        <label for="q5">Start:</label>
+        <input name="q5" id="q5" type="date">
+        <label for="q6">End:</label>
+        <input name="q6" id="q6" type="date">
+
+        <h2>Why was this important to you?</h2>
+        <textarea name="q7" id="q7" rows="4" cols="50" placeholder="This mattered to me because"></textarea>
+
+        <h2 id="section">Tell your story</h2>
+
+        <h2>What did you actually do?</h2>
+        <textarea name="q8" id="q8" rows="4" cols="50" placeholder="First I, then I"></textarea>
+
+        <h2>Who did you work with?</h2>
+        <label>Number of people:</label>
+        <input name="q9" id="q9" type="number" min="0" max="100" />
+        <input name="q10" id="q10" type="text" placeholder="Friends, organisations">
+
+        <h2>What was the hardest part?</h2>
+        <textarea name="q11" id="q11" rows="4" cols="50" placeholder="What was difficult? How did you handle it?"></textarea>
+
+        <h2>What went well?</h2>
+        <textarea name="q12" id="q12" rows="4" cols="50" placeholder="What are you proud of?"></textarea>
+
+        
+        <br><br>
+
+        <h2 id="section">Learning Outcomes</h2>
+        <p style="color: #666; margin-bottom: 20px;">Select all learning outcomes that you think apply to your experience. The AI will analyze if they match and explain why.</p>
+
+        <div class="lo-grid">
+            <!-- LO1 -->
+            <div class="lo-card" data-lo="LO1">
+                <div class="lo-header">
+                    <h3>LO1: Identify strengths and develop areas for growth</h3>
+                </div>
+                <p class="lo-question">What did you get better at? What did you learn about yourself?</p>
+                <div class="lo-examples">
+                    <span class="example-tag">Improved public speaking</span>
+                    <span class="example-tag">Learned organizing skills</span>
+                    <span class="example-tag">Better time management</span>
+                </div>
+            </div>
+
+            <!-- LO2 -->
+            <div class="lo-card" data-lo="LO2">
+                <div class="lo-header">
+                    <h3>LO2: Demonstrate challenges and new skills</h3>
+                </div>
+                <p class="lo-question">What new skills did you learn? What pushed you out of your comfort zone?</p>
+                <div class="lo-examples">
+                    <span class="example-tag">Learned video editing</span>
+                    <span class="example-tag">First time leading a team</span>
+                    <span class="example-tag">Public speaking experience</span>
+                </div>
+            </div>
+
+            <!-- LO3 -->
+            <div class="lo-card" data-lo="LO3">
+                <div class="lo-header">
+                    <h3>LO3: Initiate and plan a CAS experience</h3>
+                </div>
+                <p class="lo-question">Did you organize or plan this? How did you make it happen?</p>
+                <div class="lo-examples">
+                    <span class="example-tag">Created the project</span>
+                    <span class="example-tag">Organized schedule</span>
+                    <span class="example-tag">Recruited volunteers</span>
+                </div>
+            </div>
+
+            <!-- LO4 -->
+            <div class="lo-card" data-lo="LO4">
+                <div class="lo-header">
+                    <h3>LO4: Show commitment and perseverance</h3>
+                </div>
+                <p class="lo-question">How long did you stick with it? Did you keep going when it got hard?</p>
+                <div class="lo-examples">
+                    <span class="example-tag">Went weekly for 6 months</span>
+                    <span class="example-tag">Kept going despite difficulty</span>
+                    <span class="example-tag">Completed despite setbacks</span>
+                </div>
+            </div>
+
+            <!-- LO5 -->
+            <div class="lo-card" data-lo="LO5">
+                <div class="lo-header">
+                    <h3>LO5: Work collaboratively</h3>
+                </div>
+                <p class="lo-question">Did you work with others? How did teamwork play a role?</p>
+                <div class="lo-examples">
+                    <span class="example-tag">Coordinated with teammates</span>
+                    <span class="example-tag">Learned to delegate</span>
+                    <span class="example-tag">Resolved conflicts</span>
+                </div>
+            </div>
+
+            <!-- LO6 -->
+            <div class="lo-card" data-lo="LO6">
+                <div class="lo-header">
+                    <h3>LO6: Engage with global significance</h3>
+                </div>
+                <p class="lo-question">Does this connect to a bigger issue? (environment, poverty, health, education, etc.)</p>
+                <div class="lo-examples">
+                    <span class="example-tag">Addressed climate change</span>
+                    <span class="example-tag">Helped food insecurity</span>
+                    <span class="example-tag">Mental health awareness</span>
+                </div>
+            </div>
+
+            <!-- LO7 -->
+            <div class="lo-card" data-lo="LO7">
+                <div class="lo-header">
+                    <h3>LO7: Recognize ethics of choices</h3>
+                </div>
+                <p class="lo-question">Were there ethical decisions to make? Did you consider different perspectives?</p>
+                <div class="lo-examples">
+                    <span class="example-tag">Cultural sensitivity</span>
+                    <span class="example-tag">Fair treatment</span>
+                    <span class="example-tag">Environmental impact</span>
+                </div>
+            </div>
+        </div>
+
+        <input type="hidden" id="selected-los" name="selected_los" value="">
+
+        <button type="submit" style="padding: 12px 24px; font-size: 18px;">
+            Generate CAS Reflection
+        </button>
+
+    </form>
+    
+<script src="{{ url_for('static', filename='cool.js') }}"></script>
+</body>
+</html>
