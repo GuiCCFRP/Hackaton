@@ -1,0 +1,91 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e1f29, #3a3d52);
+    background-attachment: fixed;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 35px 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.8);
+    font-size: 15px;
+}
+
+
+.btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    border: none;
+    background: #4a78f4;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background: #335bd1;
+}
+
+
+.switch-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.switch-link {
+    color: #4a9cff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.switch-link:hover {
+    text-decoration: underline;
+}
+
+
+#form-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+#cas:active {
+    background-color: #781919;
+}
