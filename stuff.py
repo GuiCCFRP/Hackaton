@@ -11,4 +11,5 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(67), nullable=False)
 
 
-API_KEY = "sk-hc-v1-a116620997e2443a9f23bef82a50ec014fe9d189a8dc46339bc6f3415bb8c515" #YES TS IS RAGEBAIT :)))))))))
+API_KEY = "erm idk"
+
